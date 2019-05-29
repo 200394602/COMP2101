@@ -9,18 +9,12 @@ echo "Report 1 : ZIP file"
 echo ""
 
 # make a Pictures directory if we don't have one - assumes we have a home directory
-echo "Testing if we have a Pictures directory, and creating one if we don't"
-echo ""
 test -d ~/Pictures || mkdir ~/Pictures
 
 # download a zipfile of pictures to our Pictures directory if it isn't already there - assumes you are online
-echo "Downloading a zip file of pictures to our Pictures directory if it isn't already there"
-echo ""
 test -f ~/Pictures/pics.zip || wget -q -O ~/Pictures/pics.zip http://zonzorp.net/pics.zip
 
 # unpack the downloaded zipfile if it is there, then delete the local copy of the zipfile
-echo "Unpacking the downloaded zip file and then deleting the local copy of the zip file"
-echo ""
 test -f ~/Pictures/pics.zip && unzip -d ~/Pictures -o -q ~/Pictures/pics.zip && rm ~/Pictures/pics.zip
 
 # Make a report on what we have in the Pictures directory
@@ -38,20 +32,15 @@ echo ""
 
 
 echo "Report 2 : TGZ file"
+echo ""
 
 # make a Pictures directory if we don't have one - assumes we have a home directory
-echo "Testing if we have a Pictures directory, and creating one if we don't"
-echo ""
 test -d ~/Pictures || mkdir ~/Pictures
 
 # download a zipfile of pictures to our Pictures directory if it isn't already there - assumes you are online
-echo "Downloading a zip file of pictures to our Pictures directory if it isn't already there"
-echo ""
 test -f ~/Pictures/pics.tgz || wget -q -O ~/Pictures/pics.tgz https://zonzorp.net/pics.tgz
 
 # unpack the downloaded echo "Unpacking the downloaded zip file and then deleting the local copy of the zipfile"zipfile if it is there, then delete the local copy of the zipfile
-echo "Unpacking the downloaded zip file and then deleting the local copy of the zip file"
-echo ""
 test -f ~/Pictures/pics.tgz && tar xzf ~/Pictures/pics.tgz -C ~/Pictures && rm ~/Pictures/pics.tgz
 
 # Make a report on what we have in the Pictures directory
