@@ -17,7 +17,7 @@ test -h /etc/resolv.conf && echo "/etc/resolv.conf is a symbolic link" || echo "
 
 # TASK 3: Add a test to see if the /etc/resolv.conf file is a directory
 
-test -d /etc/resolv.conf && echo "/etc/resolv.conf is a directory" || echo "/etc/resolv.conf is not a dirctory"
+test -d /etc/resolv.conf && echo "/etc/resolv.conf is a directory" || echo "/etc/resolv.conf is not a directory"
 
 # TASK 4: Add a test to see if the /etc/resolv.conf file is readable
 
@@ -56,7 +56,7 @@ test -x /etc/resolv.conf && echo "/etc/resolv.conf is executable" || echo "/etc/
 # TASK 7: Add testing to print out which file newest, or if they are the same age
 [ /etc/hosts -nt /etc/resolv.conf ] && echo "/etc/hosts is newer than /etc/resolv.conf"
 [ /etc/hosts -ot /etc/resolv.conf ] && echo "/etc/resolv.conf is newer than /etc/hosts"
-[ ! /etc/hosts -nt /etc/resolv.conf ] -a [ ! /etc/hosts -ot /etc/resolv.conf ] && echo "/etc/hosts is the same age as /etc/resolv.conf"
+[ ! /etc/hosts -nt /etc/resolv.conf ] && [ ! /etc/hosts -ot /etc/resolv.conf ] && echo "/etc/hosts is the same age as /etc/resolv.conf"
 
 # this section demonstrates doing numeric tests in bash
 

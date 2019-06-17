@@ -19,7 +19,7 @@ referenceString="notadoctor"
 prompt="Guess the password : "
 read -p "$prompt" myString
 
-referenceString="notadoctor"
+referenceString="yesdoctor"
 if [ $myString = $referenceString ]
 then
   echo "You guessed the password!"
@@ -31,10 +31,10 @@ fi
 #           *** Do not use the exit command
 
 echo ""
-echo "Guessing Game! YOu have three tries to guess the password!"
+echo "Guessing Game! You have three tries to guess the password!"
 echo ""
 
-  referenceString="notadoctor"
+  referenceString="newpassword"
   guess=3
 
   for ((i=1; i<=$guess; i++)) ;
