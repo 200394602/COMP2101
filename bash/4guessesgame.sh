@@ -1,3 +1,4 @@
+
 #!/bin/bash
 #
 # This script implements a guessing game
@@ -69,16 +70,38 @@ userguess=0
 
 #echo""
 # TASK 3: Give them better feedback, telling them if their guess is too low, or too high
-
-while [ $userguess != $secretnumber ]; do # loop around until they get it right
-  read -p "Give me a number from 1 to 10: " userguess # ask for a guess
-  if [ $userguess -eq $secretnumber ]; then
-    echo "You got it! Have a milkdud."
-    #exit
-  fi
-  if [ $userguess -gt $secretnumber ]; then
-    echo "Your guess is too high!"
-  elif [ $userguess -lt $secretnumber ]; then
-    echo "Your guess is too low!"
+count=0
+for count in {1..4}
+ do
+  while [ $count -lt 5 ]; do
+    echo "This is your chance number $count"
+    count=$((count+1))
+    read -p "Give me a number from 1 to 10: " userguess
+    if [[ $userguess -eq $secretnumber ]]; then
+      echo "You got it! Have a milkdud."
+      exit
+    fi
+    if [ $userguess -gt $secretnumber ]; then
+      echo "Your guess is too high!"
+    elif [ $userguess -lt $secretnumber ]; then
+      echo "Your guess is too low!"
+    fi
+  done
+  if [ $count -gt 4 ]; then
+    echo "Sorry, you failed. The password eludes you..."
+    exit
   fi
 done
+
+#while [ $userguess != $secretnumber ]; do # loop around until they get it right
+  #read -p "Give me a number from 1 to 10: " userguess # ask for a guess
+  #if [ $userguess -eq $secretnumber ]; then
+    #echo "You got it! Have a milkdud."
+    #exit
+  #fi
+  #if [ $userguess -gt $secretnumber ]; then
+    #echo "Your guess is too high!"
+  #elif [ $userguess -lt $secretnumber ]; then
+    #echo "Your guess is too low!"
+  #fi
+#done
