@@ -13,7 +13,7 @@ function Show-SpaceUsage {
   $filesystems = $drives | Where-Object size -GT 0
   $filesystems | Format-Table -AutoSize DeviceID,
                                     @{ n= "Size(GB)" ; e= {$_.size / 1gb -as [int]} } ,
-                                    @{ n= "Free(GB)" ; e= {$_.freespace / 1gb -as [int]} } , 
+                                    @{ n= "Free Space(GB)" ; e= {$_.freespace / 1gb -as [int]} } , 
                                     ProviderName
 }
 
